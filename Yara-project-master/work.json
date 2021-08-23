@@ -1,0 +1,274 @@
+/// <reference types="cypress" />
+import * as utilityHelper from "./helper";
+import { Given, And, When, Then } from "cypress-cucumber-preprocessor/steps";
+
+Given('Logged as user with role Global admin and role Global settings and PolarisMaintenance', () => {
+    cy.LoginToApplication();
+    //cy.visit('https://agrocore-admin-polaris.stage.emea.yaradigitallabs.io/')
+})
+And('clicked  button{string}',(button1) => {
+    cy.contains(button1, {timeout:9000 }).click()
+    
+})
+Given('I am logged in', () => {
+    cy.url().should('include', 'admin/countries')
+})
+//SCENARIO -1 -"ADD COUNTRY"
+
+When('I clicked button {string} a modal appeared', (button) => {
+    cy.contains(button, { timeout: 9000 }).click()
+})
+And('I create new country with following details:', (datatable) => {
+   
+    datatable.hashes().forEach((ele: any) => {
+
+        for (let propName in ele) {
+            switch (propName) {
+                case 'CountryName':
+                    utilityHelper.setInputValue('[data-cy="countryFormInputName"]',ele[propName])
+                    break;
+
+                case 'CountryCode':
+                    utilityHelper.setInputValue('[data-cy="countryFormInputCountryCode"]',ele[propName])
+                    break;
+
+                case 'Currency':
+                    utilityHelper.setSingleDropdownValue('[data-cy="countryFormSelectCurrency"]', ele[propName])
+                   
+                    break;
+
+                case 'Whichunitsystemisusing?':
+                    utilityHelper.setSingleDropdownValue('[data-cy="countryFormSelectIsDefaultMetric"]',ele[propName])
+                    break;
+
+                case 'Windspeedunit':
+                    utilityHelper.setSingleDropdownValue('[data-cy="countryFormSelectWindSpeedUnit"] ',ele[propName])
+                    break;
+
+                case 'Precipitationamountunit':
+                    utilityHelper.setSingleDropdownValue('[data-cy="countryFormSelectPrecipitationAmountUnit"] ',ele[propName])
+                    break;
+
+                case 'Evapotranspirationunit':
+                    utilityHelper.setSingleDropdownValue('[data-cy="countryFormSelectEvapotranspirationRefUnit"] ',ele[propName])
+                    break;
+
+                case 'Qpfsnowamountunit':
+                    utilityHelper.setSingleDropdownValue('[data-cy="countryFormSelectQpfSnowAmountUnit"] ',ele[propName])
+                    break;
+
+                case 'Temperatureunit':
+                    utilityHelper.setSingleDropdownValue('[data-cy="countryFormSelectTemperatureUnit"] ',ele[propName])
+                    break;
+
+                case 'Dewpointunit':
+                    utilityHelper.setSingleDropdownValue('[data-cy="countryFormSelectDewPointUnit"]',ele[propName])
+                    break;
+
+                case 'ProductSetCode(Optional)':
+                    utilityHelper.setInputValue('[data-cy="countryFormInputProductSetCode"]',ele[propName])
+                    break;
+
+                case 'Solutions(Optional)':
+                    utilityHelper.setMultiDropdownValue('[data-cy="countryFormSelectApplicationTags"]',ele[propName],false)
+                    break;
+
+                default:
+                    break;
+            }
+        }
+    })
+})
+And('I clicked button {string}', (button) => {
+    cy.contains(button).click()
+})
+ Then('I see tooltip{string}and{string}', (headerMsg, bodyMsg) => {
+
+    utilityHelper.verifyAlertToolTips(headerMsg, bodyMsg)
+})
+
+And('in Table should be added row with following data:', (dataTable) => {
+    utilityHelper.SearchElement('Name', 'test')
+    utilityHelper.verifyDataTable(dataTable, 'table')
+})
+
+
+//scenario-2
+
+
+When('I clicked three dots in the end of row in column Action for country Test a context menu with options {string} and {string} shows', (button1,button2) => {
+    utilityHelper.SearchElement('Name', 'Test')
+    cy.get('[data-cy=countryTableEditMenu]').click()
+    //cy.get('sc-fzoXWK hnKkAN').contains(button1,button2)
+    cy.get('[data-cy="countryTableEditButton"]').contains(button1).should('be.visible')
+    cy.get('[data-cy="countryTableDeleteButton"]').contains(button2).should('be.visible')
+   // cy.get('div').invoke('attr','data-cy').should("countryTable"+button1+"button","countryTable"+button2+"button").should('be.visible')
+    // cy.wait(5000)
+    //cy.contains(button1,button2).should('be.visible')
+    //utilityHelper.verifyAlertToolTips(button1,button2)
+})
+
+And('I choose {string} a modal appeared with following data:', (button) => {
+    cy.contains(button).click()
+    //cy.get('countryTableEditButton').click()
+    //cy.wait(5000)
+   // utilityHelper.verifyDataTable(dataTable, 'table')
+})
+
+And('I changed data in all fields:', (datatable) => {
+ 
+    datatable.hashes().forEach((ele: any) => {
+
+        for (let propName in ele) {
+            switch (propName) {
+                case 'CountryName':
+                    utilityHelper.setInputValue('[data-cy="countryFormInputName"]',ele[propName])
+                    break;
+
+                case 'CountryCode':
+                    utilityHelper.setInputValue('[data-cy="countryFormInputCountryCode"]',ele[propName])
+                    break;
+
+                case 'Currency':
+                    utilityHelper.setSingleDropdownValue('[data-cy="countryFormSelectCurrency"]', ele[propName])
+                   
+                    break;
+
+                case 'Whichunitsystemisusing?':
+                    utilityHelper.setSingleDropdownValue('[data-cy="countryFormSelectIsDefaultMetric"]',ele[propName])
+                    break;
+
+                case 'Windspeedunit':
+                    utilityHelper.setSingleDropdownValue('[data-cy="countryFormSelectWindSpeedUnit"] ',ele[propName])
+                    break;
+
+                case 'Precipitationamountunit':
+                    utilityHelper.setSingleDropdownValue('[data-cy="countryFormSelectPrecipitationAmountUnit"] ',ele[propName])
+                    break;
+
+                case 'Evapotranspirationunit':
+                    utilityHelper.setSingleDropdownValue('[data-cy="countryFormSelectEvapotranspirationRefUnit"] ',ele[propName])
+                    break;
+
+                case 'Qpfsnowamountunit':
+                    utilityHelper.setSingleDropdownValue('[data-cy="countryFormSelectQpfSnowAmountUnit"] ',ele[propName])
+                    break;
+
+                case 'Temperatureunit':
+                    utilityHelper.setSingleDropdownValue('[data-cy="countryFormSelectTemperatureUnit"] ',ele[propName])
+                    break;
+
+                case 'Dewpointunit':
+                    utilityHelper.setSingleDropdownValue('[data-cy="countryFormSelectDewPointUnit"]',ele[propName])
+                    break;
+
+                case 'ProductSetCode(Optional)':
+                    utilityHelper.setInputValue('[data-cy="countryFormInputProductSetCode"]',ele[propName])
+                    break;
+
+                case 'Solutions(Optional)':
+                    utilityHelper.setMultiDropdownValue('[data-cy="countryFormSelectApplicationTags"]',ele[propName],false)
+                    break;
+
+                default:
+                    break;
+            }
+        }
+    })
+})
+And('I clicked button "<X>" in right up corner of modal', () => {
+    cy.get('[data-cy=countryEditFormButtonClose]').click()
+   // cy.contains(button).click()
+})
+
+Then('modal disappeared, should not changes any data for country Test', (dataTable) => {
+    cy.get('tbody>tr').should('have.length',1)
+    //cy.get('tr.sc-fzoWqW.LxbjH').should('be.visible')
+    //cy.get('sc-fzoWqW LxbjH').should('not.change')
+
+})
+//Scenario-3
+When ('I clicked three dots in the end of row in column Action for country Test a context menu with options {string} and {string} shows',(button1,button2)=>{
+   
+    utilityHelper.SearchElement('Name', 'Test')
+    cy.get('[data-cy=countryTableEditMenu]').click()
+    //cy.get('sc-fzoXWK hnKkAN').contains(button1,button2)
+    cy.get('[data-cy="countryTableEditButton"]').contains(button1).should('be.visible')
+    cy.get('[data-cy="countryTableDeleteButton"]').contains(button2).should('be.visible')
+})
+And('I choose {string} a modal appeared with following data:',(button)=>{
+    cy.contains(button).click()
+})
+
+ And('I changed data in all fields:',(datatable)=>{
+    datatable.hashes().forEach((ele: any) => {
+
+        for (let propName in ele) {
+            switch (propName) {
+                case 'CountryName':
+                    utilityHelper.setInputValue('[data-cy="countryFormInputName"]',ele[propName])
+                    break;
+
+                case 'CountryCode':
+                    utilityHelper.setInputValue('[data-cy="countryFormInputCountryCode"]',ele[propName])
+                    break;
+
+                case 'Currency':
+                    utilityHelper.setSingleDropdownValue('[data-cy="countryFormSelectCurrency"]', ele[propName])
+                   
+                    break;
+
+                case 'Whichunitsystemisusing?':
+                    utilityHelper.setSingleDropdownValue('[data-cy="countryFormSelectIsDefaultMetric"]',ele[propName])
+                    break;
+
+                case 'Windspeedunit':
+                    utilityHelper.setSingleDropdownValue('[data-cy="countryFormSelectWindSpeedUnit"] ',ele[propName])
+                    break;
+
+                case 'Precipitationamountunit':
+                    utilityHelper.setSingleDropdownValue('[data-cy="countryFormSelectPrecipitationAmountUnit"] ',ele[propName])
+                    break;
+
+                case 'Evapotranspirationunit':
+                    utilityHelper.setSingleDropdownValue('[data-cy="countryFormSelectEvapotranspirationRefUnit"] ',ele[propName])
+                    break;
+
+                case 'Qpfsnowamountunit':
+                    utilityHelper.setSingleDropdownValue('[data-cy="countryFormSelectQpfSnowAmountUnit"] ',ele[propName])
+                    break;
+
+                case 'Temperatureunit':
+                    utilityHelper.setSingleDropdownValue('[data-cy="countryFormSelectTemperatureUnit"] ',ele[propName])
+                    break;
+
+                case 'Dewpointunit':
+                    utilityHelper.setSingleDropdownValue('[data-cy="countryFormSelectDewPointUnit"]',ele[propName])
+                    break;
+
+                case 'ProductSetCode(Optional)':
+                    utilityHelper.setInputValue('[data-cy="countryFormInputProductSetCode"]',ele[propName])
+                    break;
+
+                case 'Solutions(Optional)':
+                    utilityHelper.setMultiDropdownValue('[data-cy="countryFormSelectApplicationTags"]',ele[propName],false)
+                    break;
+
+                default:
+                    break;
+            }
+        }
+    })
+})
+
+And('I clicked button {string}',(button)=>{
+    cy.contains(button).click()
+})
+Then('I see tooltip{string}and{string}',(headerMsg,bodyMsg)=>{
+utilityHelper.verifyAlertToolTips(headerMsg,bodyMsg)
+})
+And('data for country should be updated in row:',(dataTable)=>{
+    //utilityHelper.SearchElement('Name', 'test')
+    utilityHelper.verifyDataTable(dataTable, 'table')
+})
+

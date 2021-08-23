@@ -1,0 +1,79 @@
+Feature:Units
+    Add, edit and delete Units
+
+    Background:
+        Given Logged as user with role Global admin and role Global settings and PolarisMaintenance
+        And cliked to button "Global settings"
+        And clicked "Crop settings" submenus "Crops", "Units", "Unit Conversations", "Growth Scales"," Soil Types",
+        "Crop Residue Management","Variety Correction Factors" became visible
+        And clicked to submenu "Units"
+
+    Note:The scenarios have to be executed in same order as described in file
+
+    Scenario: Add unit
+        Given I am logged in
+        And I clicked button "Add Unit"
+        And I create new Unit with following details:
+            | Unit Name | Tags       | Country (Optional) |
+            | Test      | DemandUnit | Antarctica         |
+        And I clicked button "Save"
+        Then I see tooltip "Unit added! The new unit has been successfully added to the global list."
+        And in Table should be added row with following data:
+            | Name | Tags       | Last mod. | Actions |
+            | Test | DemandUnit | ?         | ···     |
+
+    Scenario: Edit unit with saving changes
+        Given I am logged in
+        When I clicked on three dots in end of row for unit "Test" a context menu with options "Edit" and "Delete" shows
+        And I cliked "Edit" a modal appeared with following data:
+            | Unit Name | Tags       | Country (Optional) |
+            | Test      | DemandUnit | Antarctica         |
+        And I changed data in all fields:
+            | Unit Name | Tags            | Country (Optional)     |
+            | Test 1    | DemandUnit , Al | Antarctica,Timor-Leste |
+        And I clicked button "Save"
+        Then I see tooltip "Changes saved The changes done to the table row have been successfully saved."
+        And data for Unit row should be updated:
+            | Name   | Tags            | Last mod. | Actions |
+            | Test 1 | DemandUnit   Al | ?         | ···     |
+
+    Scenario: Edit unit without saving changes
+        Given I am logged in
+        When I clicked on three dots in end of row for unit "Test" a context menu with options "Edit" and "Delete" shows
+        And I cliked "Edit" a modal appeared with following data:
+            | Name   | Tags            | Last mod. | Actions |
+            | Test 1 | DemandUnit   Al | ?         | ···     |
+        And I changed data in all fields:
+            | Unit Name | Tags                   | Country (Optional)               |
+            | Test  2   | DemandUnit   Al  AlSat | Antarctica  Timor-Leste  Andorra |
+        And I clicked button <X> in uper right corner of modal
+        Then a modal disappeared , no changed done to row and data
+            | Name   | Tags            | Last mod. | Actions |
+            | Test 1 | DemandUnit   Al | ?         | ···     |
+
+    Scenario:Denied  Deleting of unit
+        Given I am logged in
+        When I clicked on three dots in end of row for unit "Test" a context menu with options "Edit" and "Delete" shows
+        And I clicked "Delete" a content appered "Please note!
+        Are you sure you want to delete Test 1? The action cannot be reverted."
+        And I clicked button "Don't delete"
+        Then modal disappeared and deleting is not done. In table still stay row
+            | Name   | Tags            | Last mod. | Actions |
+            | Test 1 | DemandUnit   Al | ?         | ···     |
+
+    Scenario:Delete unit
+        Given I am logged in
+        When I clicked on three dots in end of row for unit "Test" a context menu with options "Edit" and "Delete" shows
+        And I clicked "Delete" a content appered "Please note!
+        Are you sure you want to delete Test 1? The action cannot be reverted."
+        And I clicked button "Delete"
+        Then I see tooltip "Unit deleted The unit has been removed.The unit can anyway be added again."and row is removed from table
+
+    Scenario: Delete unit when is used in Unit Conversations
+        Given I am logged in
+        When I clicked on three dots in end of row for unit "kg/ha" a context menu with options "Edit" and "Delete" shows
+        And I clicked "Delete" a content appered "Please note!
+        The unit cannot be deleted as long as it is used in unit conversions. Edit the related data and try again."
+        And I clicked button "Ok"
+        Then content disappeared, row with "kg/ha" is not deleted
+

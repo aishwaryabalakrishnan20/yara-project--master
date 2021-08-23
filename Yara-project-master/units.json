@@ -1,0 +1,353 @@
+/// <reference types="cypress" />
+
+import * as utilityHelper from "./helper";
+import { Given, And,When, Then
+} from "cypress-cucumber-preprocessor/steps";
+import { uniqueSort
+} from "../../../node_modules/cypress/types/jquery/index";
+// import { MainMenu_cy,SubMenu_cy,ExpandedMenu_cy } from "../../fixtures/yaraMenu";
+
+Given('Logged as user with role Global admin and role Global settings and PolarisMaintenance', ()=>{
+ cy.LoginToApplication()
+})
+And ('clicked button{string
+}',(button)=>{
+    // Add_EditCountryModal_cy.txtCountryName
+    // MainMenu_cy.globalSettings.
+    cy.contains(button,
+    {timeout: 10000
+    }).click()
+})
+And('clicked "Crop settings" submenus "Crops",
+"Units",
+"Unit Conversations",
+"Growth Scales",
+" Soil Types",
+"Crop Residue Management",
+"Variety Correction Factors" became visible',()=>{
+cy.get('[id="0"
+    ]').click()
+cy.get('[data-cy=menuSubMenu_crop-settings
+    ] > .MuiCollapse-container').should('be.visible')
+// cy.get('[data-cy="menuSubMenu_crop-settings"]').should("have.all.key","Crops","Units", "Unit Conversations", "Growth Scales"," Soil Types","Crop Residue Management","Variety Correction Factors" )
+    // cy.get(ExpandedMenu_cy.analysisMethods).should('be.visible')
+})
+Given ('I am logged in cropSettings',()=>
+{
+    cy.get('[data-cy="menuSubMenu_crop-settings"
+    ]').click()
+    cy.url().should('include','admin/crop-settings/units')
+})
+// Scenario: Add unit
+
+And ('I clicked button {string
+}',(button1)=>{
+  
+    cy.get('[data-cy="menuSubMenuAction_admin-units"
+    ]',
+    {timeout: 10000
+    }).click()
+ cy.get('[data-cy="addUnitButton"
+    ]',
+    {timeout: 10000
+    }).contains(button1).click()
+})
+And ('I create new Unit with following details:',(datatable)=>{
+ 
+ datatable.hashes().forEach((ele: any) => {
+
+    for (let propName in ele) {
+        switch (propName) {
+            case 'Unit Name':
+                utilityHelper.setInputValue('[data-cy="unitFormInputName"
+                ]',ele[propName
+                ])
+                break;
+
+            case 'Tags':
+                utilityHelper.setSingleDropdownValue('[data-cy="unitFormSelectTags"
+                ]',ele[propName
+                ])
+                break;
+
+            case 'Country (Optional)':
+             
+                utilityHelper.setSingleDropdownValue('[data-cy=unitFormSelectCountries
+                ]',ele[propName
+                ])
+               
+                break;
+                default:
+                    break;
+            }
+        }
+    })
+})
+            
+And ('clicked button {string
+} in ADD units',(button)=>{
+    cy.get('[data-cy="unitFormButtonSubmit"
+    ]').contains(button).click({force: true
+    })
+})
+Then ('I see tooltip {string
+}and{string
+}',(headerMsg,bodyMsg)=>
+{
+    utilityHelper.verifyAlertToolTips(headerMsg,bodyMsg)
+})
+And ('in Table should be added row with following data:', (datatable)=>
+{
+    utilityHelper.searchTableBasedOnColumn('unitTable','Name','test')
+    utilityHelper.verifyTableData(datatable,'unitTable')
+})
+//  Scenario: Edit unit without saving changes
+When('I clicked on three dots in end of row for unit Test a context menu with options {string
+} and {string
+} shows',(button1,button2)=>
+{
+    utilityHelper.searchTableBasedOnColumn('unitTable','Name','test')
+    cy.get('[data-cy="unitTableEditMenu"
+    ]').click()
+    cy.get('[data-cy="unitTableEditButton"
+    ]').contains(button1).should('be.visible')
+    cy.get('[data-cy="unitTableDeleteButton"
+    ]').contains(button2).should('be.visible')
+})
+And ('I clicked {string
+} a modal appeared with following data:',(button)=>
+{
+ cy.contains(button).click()
+})
+And ('I changed data in all fields cropSettings:',(datatable)=>
+{
+    datatable.hashes().forEach((ele: any) => 
+    {
+
+        for (let propName in ele)
+         {
+            switch (propName)
+             {
+                case 'Unit Name':
+                    utilityHelper.setInputValue('[data-cy="unitFormInputName"
+                ]',ele[propName
+                ])
+                    break;
+    
+                case 'Tags':
+                    utilityHelper.setMultiDropdownValue('[data-cy="unitFormSelectTags"
+                ]',ele[propName
+                ],true)
+                    break;
+    
+                    case 'Country (Optional)':
+                        utilityHelper.setMultiDropdownValue('[data-cy="unitFormSelectCountries"
+                ]', ele[propName
+                ],true)
+                
+                   
+                    break;
+                default:
+                    break;
+            }
+        }
+    })
+})
+And ('I clicked button "<X>" in uper right corner of modal unit',()=>
+{
+    cy.get('[data-cy="unitEditFormButtonClose"
+    ]').click()
+})
+Then ('a modal disappeared , no changed done to row and data',()=>{
+    cy.get('tbody>tr').should('have.length',
+    1)
+})
+//  Scenario: Edit unit with saving changes
+
+When('I clicked on three dots in end of row for unit Test a context menu with options {string
+} and {string
+} shows',(button1,button2)=>
+{
+    utilityHelper.searchTableBasedOnColumn('unitTable','Name','test')
+    cy.get('[data-cy="unitTableEditMenu"
+    ]').click()
+    cy.get('[data-cy="unitTableEditButton"
+    ]').contains(button1).should('be.visible')
+    cy.get('[data-cy="unitTableDeleteButton"
+    ]').contains(button2).should('be.visible')
+})
+And ('I clicked {string
+} a modal appeared with following data:',(button)=>
+{
+ cy.contains(button).click()
+})
+And('I changed data in all fields cropSettings:',(dataTable)=>
+{
+    dataTable.hashes().forEach((ele: any) => 
+    {
+
+        for (let propName in ele) 
+        {
+            switch (propName) 
+            {
+               case 'Unit Name':
+                
+                    utilityHelper.setInputValue('[data-cy="unitFormInputName"
+                ]',ele[propName
+                ])
+                    break;
+
+                case 'Tags':
+                    utilityHelper.setMultiDropdownValue('[data-cy="unitFormSelectTags"
+                ]',ele[propName
+                ],true)
+                    break;
+
+                case 'Country (Optional)':
+                    utilityHelper.setMultiDropdownValue('[data-cy="unitFormSelectCountries"
+                ]', ele[propName
+                ],true)
+                   
+                    break;
+                   default:
+                       break;
+            }
+        }
+    })
+})
+And ("clicked button 'Save' in ADD units",()=>
+{
+    cy.get('[data-cy="unitFormButtonSubmit"
+    ]').click()
+})
+Then ('I see tooltip {string
+}and{string
+}',(headerMsg,bodyMsg)=>
+{
+    utilityHelper.verifyAlertToolTips(headerMsg,bodyMsg)
+})
+  And ('data for Unit row should be updated:', (datatable)=>
+{
+    utilityHelper.searchTableBasedOnColumn('unitTable','Name','test')
+    utilityHelper.verifyTableData(datatable,'unitTable')
+})
+// Scenario:Denied  Deleting of unit
+       
+When(' I clicked on three dots in end of row for unit Test a context menu with options {string
+} and {string
+} shows',(button2,button1)=>
+{
+    utilityHelper.searchTableBasedOnColumn('unitTable','Name','test 1 ') 
+    //utilityHelper.SearchElement('Name', ' trial ')
+    cy.get('[data-cy="unitTableEditMenu"
+    ]').click()
+    //cy.get('sc-fzoXWK hnKkAN').contains(button1,button2)
+    cy.get('[data-cy="unitTableEditButton"
+    ]').contains(button1).should('be.visible')
+    cy.get('[data-cy="unitTableDeleteButton"
+    ]').contains(button2).should('be.visible')
+})
+And ('I clicked "Delete" a content appered {string
+}and"{string}  unit',(button1,button2)=>
+{
+    cy.get('[data-cy="unitTableDeleteButton"
+    ]').click()
+    cy.get('button',
+    {timeout: 8000
+    }).contains(button1).should('be.visible')
+    cy.get('button',
+    {timeout: 7000
+    }).contains(button2).should('be.visible')
+})
+ And ("clicked button {string} cropSettings",(button)=>
+{
+    cy.get('[data-cy="unitDeleteDialogCancelButton"
+    ]',
+    {timeout: 10000
+    }).contains(button).click()
+})
+Then('modal disappeared and deleting is not done. In table still stay row',()=>
+{
+    cy.get('tbody >tr').should('have.length',
+    1)
+})
+//    Scenario:Delete unit
+       
+When(' I clicked on three dots in end of row for unit Test a context menu with options {string
+} and {string
+} shows',(button2,button1)=>
+{
+    utilityHelper.searchTableBasedOnColumn('unitTable','Name','test 1 ') 
+    //utilityHelper.SearchElement('Name', ' trial ')
+    cy.get('[data-cy="unitTableEditMenu"
+    ]').click()
+    //cy.get('sc-fzoXWK hnKkAN').contains(button1,button2)
+    cy.get('[data-cy="unitTableEditButton"
+    ]').contains(button1).should('be.visible')
+    cy.get('[data-cy="unitTableDeleteButton"
+    ]').contains(button2).should('be.visible')
+})
+And ('I clicked "Delete" a content appered {string
+}and{string
+} unit',(button1,button2)=>
+{
+    cy.get('[data-cy="unitTableDeleteButton"
+    ]').click()
+    cy.get('button',
+    {timeout: 8000
+    }).contains(button1).should('be.visible')
+    cy.get('button',
+    {timeout: 7000
+    }).contains(button2).should('be.visible')
+})
+ And ('I clicked button {string
+} cropSettings',(button)=>
+{
+     cy.get('[data-cy="unitDeleteDialogConfirmButton"
+    ]').contains(button).click()
+})
+        
+Then(' I see tooltip {string
+}and{string
+}',(headerMsg,bodyMsg)=>
+{
+      utilityHelper.verifyAlertToolTips(headerMsg,bodyMsg)
+})
+// Scenario: Delete unit when is used in Unit Conversations
+
+When('I clicked on three dots in end of row for unit conversation a context menu with options {string
+} and {string
+} shows',(button1,button2)=>
+{
+
+    utilityHelper.searchTableBasedOnColumn('unitTable','Name','kg/ha')
+    cy.get('[data-cy="unitTableEditMenu"
+    ]').click()
+    cy.get('[data-cy="unitTableEditButton"
+    ]').contains(button1).should('be.visible')
+    cy.get('[data-cy="unitTableDeleteButton"
+    ]').contains(button2).should('be.visible')
+})
+And('clicked "Delete" a content appeared {string
+}and{string
+}',(button1,button2)=>
+{
+    cy.get('[data-cy="unitTableDeleteButton"
+    ]').click()
+    cy.get('button').contains(button1).should('be.visible')
+    cy.get('button').contains(button2).should('be.visible')
+})
+And('clicked button "Ok" units',()=>
+{
+      cy.get('[data-cy="unitDeleteDialogCancelButton"
+    ]').click()
+})
+Then('a modal disappeared , no changed done to row and data unit conversation',()=>
+{
+    cy.get('tbody >tr').should('have.length',
+    1)
+})
+
+
+           
+
