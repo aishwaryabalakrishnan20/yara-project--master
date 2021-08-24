@@ -1,0 +1,42 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Test report",
+    "line": 1,
+    "id": "test-report",
+    "tags": [],
+    "uri": "locationsAndRegions.feature",
+    "elements": [
+      {
+        "id": "test-report;test-html",
+        "keyword": "Scenario",
+        "line": 5,
+        "name": "Test html",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 3,
+            "name": "visit app",
+            "result": {
+              "status": "failed",
+              "duration": 6120000000,
+              "error_message": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://agrocore-admin-polaris.stage.emea.yaradigitallabs.io/admin/countries\n\nThe response we received from your web server was:\n\n  > 404: Not Found\n\nThis was considered a failure because the status code was not `2xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n    at https://agrocore-admin-polaris.stage.emea.yaradigitallabs.io/__cypress/runner/cypress_runner.js:138917:25\n    at visitFailedByErr (https://agrocore-admin-polaris.stage.emea.yaradigitallabs.io/__cypress/runner/cypress_runner.js:138292:12)\n    at https://agrocore-admin-polaris.stage.emea.yaradigitallabs.io/__cypress/runner/cypress_runner.js:138897:13\nFrom previous event:\n    at go (https://agrocore-admin-polaris.stage.emea.yaradigitallabs.io/__cypress/runner/cypress_runner.js:138895:17)\n    at visit (https://agrocore-admin-polaris.stage.emea.yaradigitallabs.io/__cypress/runner/cypress_runner.js:138965:16)\n    at Context.visit (https://agrocore-admin-polaris.stage.emea.yaradigitallabs.io/__cypress/runner/cypress_runner.js:138968:14)\nFrom Your Spec Code:\n    at Context.eval (https://agrocore-admin-polaris.stage.emea.yaradigitallabs.io/__cypress/tests?p=test\\specs\\features\\locationsAndRegions.feature:42000:19)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "clicked to button \"Global settings\"",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,21 @@
+{
+    "defaultCommandTimeout": 6000,
+    "integrationFolder": "test/specs",
+    "screenshotsFolder": "test/screenshots",
+    "videosFolder": "test/videos",
+    "fixturesFolder": "test/fixtures",
+    "supportFile": "test/support/index.ts",
+    "pluginsFile": "test/plugins/index.js",
+    "testFiles": "**/*.feature",
+    "experimentalRunEvents": true,
+    "chromeWebSecurity": false,
+    "includeShadowDom": true ,       
+  "baseUrl":"https://agrocore-admin-polaris.stage.emea.yaradigitallabs.io/",
+  "env":{
+    "graphqlUrl":"https://polaris-axial-gateway.stage.emea.yaradigitallabs.io/"
+    
+  },
+
+  "watchForFileChanges":false
+}
+  
