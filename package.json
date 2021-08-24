@@ -4,13 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    
+    "test": "echo \"Error: no test specified\" && exit 1",
     "cy:run_report": "cypress run --headless --browser chrome && node cucumber-html-report.js",
     "cy:open_run_report": "cypress open && node cucumber-html-report.js",
     "cy:run": "cypress run ",
-    "cy:run:chrome": "cypress run --headless --browser chrome",
+    "cy:run:chrome": "cypress run --headless --browser chrome"
    
-      "test": "CYPRESS_RETRIES=3 cypress run --browser chrome --spec=src/*.test.js"
+     
   
   },
   "author": "",
