@@ -25,7 +25,7 @@ jobs:
 
       # we need to install CircleCI CLI tool
       # to run the "manual" tests
-      - run: npx cy:run:chrome
+      - run: npx cypress run --headless --browser chrome
 post-steps:
   - store_artifacts:
       path: test/logs

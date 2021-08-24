@@ -20,6 +20,8 @@ After({tags:'@country'},()=>{
 Given ('Logged as user with role Global admin and role Global settings and PolarisMaintenance',()=>
 {
     cy.LoginToApplication()
+    
+   
 })
 And('I clicked button {string} and I clicked button {string}',(button1,button2)=>
 {

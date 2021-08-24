@@ -17,6 +17,9 @@
   "env":{
     "graphqlUrl":"https://polaris-axial-gateway.stage.emea.yaradigitallabs.io/"
     
+     
+    
+    
   },
 
   "watchForFileChanges":false
