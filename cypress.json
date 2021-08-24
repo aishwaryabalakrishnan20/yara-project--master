@@ -6,7 +6,10 @@
     "fixturesFolder": "test/fixtures",
     "supportFile": "test/support/index.ts",
     "pluginsFile": "test/plugins/index.js",
-    "testFiles": "**/*.feature",
+    "testFiles":
+      "**/*.feature",
+    
+    
     "experimentalRunEvents": true,
     "chromeWebSecurity": false,
     "includeShadowDom": true ,       
@@ -17,5 +20,6 @@
   },
 
   "watchForFileChanges":false
+  
 }
   
