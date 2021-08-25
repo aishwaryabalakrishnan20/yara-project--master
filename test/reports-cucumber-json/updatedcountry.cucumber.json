@@ -28,7 +28,7 @@
             "name": "Logged as user with role Global admin and role Global settings and PolarisMaintenance",
             "result": {
               "status": "passed",
-              "duration": 56828000000
+              "duration": 49923000000
             }
           },
           {
@@ -38,7 +38,7 @@
             "name": "I clicked button \"Global settings\" and I clicked button \"Locations\"",
             "result": {
               "status": "passed",
-              "duration": 6187000000
+              "duration": 7545000000
             }
           },
           {
@@ -85,7 +85,7 @@
             "name": "I create new country with following details:",
             "result": {
               "status": "passed",
-              "duration": 56960000000
+              "duration": 49145000000
             }
           },
           {
@@ -95,7 +95,7 @@
             "name": "I click \"Save\" and I should see tooltip text \"Country added!\" and \"The new country has been successfully added to the global list.\"",
             "result": {
               "status": "passed",
-              "duration": 9811000000
+              "duration": 8651000000
             }
           },
           {
@@ -134,7 +134,7 @@
             "name": "in Country Table a row should be added for country \"sample\" with following data:",
             "result": {
               "status": "passed",
-              "duration": 4958000000
+              "duration": 4878000000
             }
           },
           {
@@ -144,7 +144,7 @@
             "name": "I am in \"Countries\" page",
             "result": {
               "status": "passed",
-              "duration": 52000000
+              "duration": 47000000
             }
           },
           {
@@ -154,7 +154,7 @@
             "name": "I click three dots in the end of row or in column Actions for country \"sample\" present in column \"Name\" a context menu with options \"Edit\" and \"Delete\" shows",
             "result": {
               "status": "passed",
-              "duration": 6313000000
+              "duration": 7413000000
             }
           },
           {
@@ -201,7 +201,7 @@
             "name": "I choose \"Edit\" for country \"sample\" a modal appeared with following data:",
             "result": {
               "status": "passed",
-              "duration": 2001000000
+              "duration": 1917000000
             }
           },
           {
@@ -248,7 +248,7 @@
             "name": "I change data in all fields for country \"Test\" with following data:",
             "result": {
               "status": "passed",
-              "duration": 39859000000
+              "duration": 34550000000
             }
           },
           {
@@ -258,7 +258,7 @@
             "name": "I click button <X> in right up corner of modal \"Edit Country\"",
             "result": {
               "status": "passed",
-              "duration": 866000000
+              "duration": 753000000
             }
           },
           {
@@ -297,7 +297,7 @@
             "name": "modal disappeared, should not change any data for country \"sample\":",
             "result": {
               "status": "passed",
-              "duration": 192000000
+              "duration": 173000000
             }
           },
           {
@@ -307,7 +307,7 @@
             "name": "I search country \"sample\" present in column \"Name\" and choose \"Edit\"",
             "result": {
               "status": "passed",
-              "duration": 9847000000
+              "duration": 9496000000
             }
           },
           {
@@ -354,7 +354,7 @@
             "name": "I change data in all fields for country \"sample\" with following data:",
             "result": {
               "status": "passed",
-              "duration": 54934000000
+              "duration": 40363000000
             }
           },
           {
@@ -364,7 +364,7 @@
             "name": "I click \"Save\" and I should see tooltip text \"Changes saved\" and \"The changes done to the table row have been successfully saved.\"",
             "result": {
               "status": "passed",
-              "duration": 12401000000
+              "duration": 9210000000
             }
           },
           {
@@ -403,7 +403,7 @@
             "name": "data for country \"sample 1\" should be updated in row",
             "result": {
               "status": "passed",
-              "duration": 5487000000
+              "duration": 2925000000
             }
           }
         ]
@@ -428,7 +428,7 @@
             "name": "Logged as user with role Global admin and role Global settings and PolarisMaintenance",
             "result": {
               "status": "passed",
-              "duration": 53115000000
+              "duration": 40112000000
             }
           },
           {
@@ -438,7 +438,7 @@
             "name": "I clicked button \"Global settings\" and I clicked button \"Locations\"",
             "result": {
               "status": "passed",
-              "duration": 8055000000
+              "duration": 5201000000
             }
           },
           {
@@ -485,7 +485,7 @@
             "name": "I create new country with following details:",
             "result": {
               "status": "passed",
-              "duration": 72982000000
+              "duration": 43512000000
             }
           },
           {
@@ -495,7 +495,7 @@
             "name": "I click \"Save\" and I should see tooltip text \"Country added!\" and \"The new country has been successfully added to the global list.\"",
             "result": {
               "status": "passed",
-              "duration": 12200000000
+              "duration": 9860000000
             }
           },
           {
@@ -534,7 +534,7 @@
             "name": "in Country Table a row should be added for country \"sample\" with following data:",
             "result": {
               "status": "passed",
-              "duration": 9146000000
+              "duration": 5056000000
             }
           },
           {
@@ -544,7 +544,7 @@
             "name": "I am in \"Countries\" page",
             "result": {
               "status": "passed",
-              "duration": 44000000
+              "duration": 42000000
             }
           },
           {
@@ -554,7 +554,7 @@
             "name": "I clicked three dots in the end of row in column Action for country Test a context menu with options \"Edit\" and \"Delete\" shows",
             "result": {
               "status": "passed",
-              "duration": 9511000000
+              "duration": 7018000000
             }
           },
           {
@@ -564,7 +564,7 @@
             "name": "I choose \"Delete\" a content appeared \"Please note!\"and\"Are you sure you want to delete sample? The action cannot be reverted.\"",
             "result": {
               "status": "passed",
-              "duration": 1479000000
+              "duration": 1305000000
             }
           },
           {
@@ -574,7 +574,7 @@
             "name": "clicked button \"Don't delete\"",
             "result": {
               "status": "passed",
-              "duration": 769000000
+              "duration": 854000000
             }
           },
           {
@@ -584,7 +584,7 @@
             "name": "modal disappeared, should not changes anything in data or row for country  trial 1",
             "result": {
               "status": "passed",
-              "duration": 153000000
+              "duration": 159000000
             }
           },
           {
@@ -594,7 +594,7 @@
             "name": "I clicked three dots in the end of row in column Action for country Test a context menu with options \"Edit\" and \"Delete\" shows",
             "result": {
               "status": "passed",
-              "duration": 8904000000
+              "duration": 6437000000
             }
           },
           {
@@ -604,7 +604,7 @@
             "name": "I choose \"Delete\" a content appeared \"Please note!\"and\"Are you sure you want to delete sample? The action cannot be reverted.\"",
             "result": {
               "status": "passed",
-              "duration": 1666000000
+              "duration": 1491000000
             }
           },
           {
@@ -614,7 +614,7 @@
             "name": "clicked button Delete",
             "result": {
               "status": "passed",
-              "duration": 962000000
+              "duration": 1406000000
             }
           },
           {
@@ -624,7 +624,7 @@
             "name": "I see tooltip \"Country deleted\"and\"The country has been removed. The country can anyway be added again.\"",
             "result": {
               "status": "passed",
-              "duration": 7834000000
+              "duration": 9012000000
             }
           }
         ]
