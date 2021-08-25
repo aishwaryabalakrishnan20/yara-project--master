@@ -1,1 +1,7 @@
-node_modules
+/node_modules
+/test/reports-cucumber-json
+/test/reports-json
+/step_definitions/videos
+/screenshots
+
+

@@ -28,7 +28,7 @@
             "name": "Logged as user with role Global admin and role Global settings and PolarisMaintenance",
             "result": {
               "status": "passed",
-              "duration": 42694000000
+              "duration": 43817000000
             }
           },
           {
@@ -38,7 +38,7 @@
             "name": "I clicked button \"Global settings\" and I clicked button \"Locations\"",
             "result": {
               "status": "failed",
-              "duration": 12251000000,
+              "duration": 13524000000,
               "error_message": "CypressError: `cy.click()` failed because it requires a DOM element.\n\nThe subject received was:\n\n  > `undefined`\n\nThe previous command that ran was:\n\n  > `cy.xpath()`\n\nBecause this error occurred during a `after each` hook we are skipping the remaining tests in the current suite: `Regions`\n    at ensureElement (https://agrocore-admin-polaris.stage.emea.yaradigitallabs.io/__cypress/runner/cypress_runner.js:144015:24)\n    at validateType (https://agrocore-admin-polaris.stage.emea.yaradigitallabs.io/__cypress/runner/cypress_runner.js:143852:16)\n    at Object.ensureSubjectByType (https://agrocore-admin-polaris.stage.emea.yaradigitallabs.io/__cypress/runner/cypress_runner.js:143888:9)\n    at pushSubjectAndValidate (https://agrocore-admin-polaris.stage.emea.yaradigitallabs.io/__cypress/runner/cypress_runner.js:152955:15)\n    at Context.<anonymous> (https://agrocore-admin-polaris.stage.emea.yaradigitallabs.io/__cypress/runner/cypress_runner.js:153307:18)\nFrom Your Spec Code:\n    at Context.eval (https://agrocore-admin-polaris.stage.emea.yaradigitallabs.io/__cypress/tests?p=test\\support\\index.ts:183:43)"
             }
           },
