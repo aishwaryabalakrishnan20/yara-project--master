@@ -15,11 +15,7 @@
         "name": "Add a country and Edit country without saving changes and saving changes",
         "tags": [
           {
-            "name": "@smoke",
-            "line": 15
-          },
-          {
-            "name": "@country",
+            "name": "@smokeTest",
             "line": 15
           }
         ],
@@ -32,7 +28,7 @@
             "name": "Logged as user with role Global admin and role Global settings and PolarisMaintenance",
             "result": {
               "status": "passed",
-              "duration": 17618000000
+              "duration": 33584000000
             }
           },
           {
@@ -41,9 +37,8 @@
             "line": 6,
             "name": "I clicked button \"Global settings\" and I clicked button \"Locations\"",
             "result": {
-              "status": "failed",
-              "duration": 10429000000,
-              "error_message": "AssertionError: Timed out retrying after 10000ms: Expected to find content: 'Global settings' but never did.\n    at Context.eval (https://agrocore-admin-polaris.stage.emea.yaradigitallabs.io/__cypress/tests?p=test\\specs\\features\\updatedcountry.feature:42567:8)\n    at Context.resolveAndRunStepDefinition (https://agrocore-admin-polaris.stage.emea.yaradigitallabs.io/__cypress/tests?p=test\\specs\\features\\updatedcountry.feature:10406:29)\n    at Context.eval (https://agrocore-admin-polaris.stage.emea.yaradigitallabs.io/__cypress/tests?p=test\\specs\\features\\updatedcountry.feature:9727:35)"
+              "status": "passed",
+              "duration": 5217000000
             }
           },
           {
@@ -89,7 +84,8 @@
             "line": 8,
             "name": "I create new country with following details:",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 18736000000
             }
           },
           {
@@ -98,7 +94,8 @@
             "line": 11,
             "name": "I click \"Save\" and I should see tooltip text \"Country added!\" and \"The new country has been successfully added to the global list.\"",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 7856000000
             }
           },
           {
@@ -136,7 +133,8 @@
             "line": 12,
             "name": "in Country Table a row should be added for country \"sample\" with following data:",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 2433000000
             }
           },
           {
@@ -145,7 +143,8 @@
             "line": 17,
             "name": "I am in \"Countries\" page",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 21000000
             }
           },
           {
@@ -154,7 +153,8 @@
             "line": 19,
             "name": "I click three dots in the end of row or in column Actions for country \"sample\" present in column \"Name\" a context menu with options \"Edit\" and \"Delete\" shows",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 3261000000
             }
           },
           {
@@ -200,7 +200,8 @@
             "line": 20,
             "name": "I choose \"Edit\" for country \"sample\" a modal appeared with following data:",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 831000000
             }
           },
           {
@@ -246,7 +247,8 @@
             "line": 23,
             "name": "I change data in all fields for country \"Test\" with following data:",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 18210000000
             }
           },
           {
@@ -255,7 +257,8 @@
             "line": 26,
             "name": "I click button <X> in right up corner of modal \"Edit Country\"",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 423000000
             }
           },
           {
@@ -293,7 +296,8 @@
             "line": 27,
             "name": "modal disappeared, should not change any data for country \"sample\":",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 84000000
             }
           },
           {
@@ -302,7 +306,8 @@
             "line": 31,
             "name": "I search country \"sample\" present in column \"Name\" and choose \"Edit\"",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 4666000000
             }
           },
           {
@@ -348,7 +353,8 @@
             "line": 32,
             "name": "I change data in all fields for country \"sample\" with following data:",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 20139000000
             }
           },
           {
@@ -357,7 +363,8 @@
             "line": 35,
             "name": "I click \"Save\" and I should see tooltip text \"Changes saved\" and \"The changes done to the table row have been successfully saved.\"",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 7142000000
             }
           },
           {
@@ -395,7 +402,8 @@
             "line": 36,
             "name": "data for country \"sample 1\" should be updated in row",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 1523000000
             }
           }
         ]
@@ -419,8 +427,7 @@
             "line": 5,
             "name": "Logged as user with role Global admin and role Global settings and PolarisMaintenance",
             "result": {
-              "status": "passed",
-              "duration": 11426000000
+              "status": "skipped"
             }
           },
           {
@@ -429,8 +436,7 @@
             "line": 6,
             "name": "I clicked button \"Global settings\" and I clicked button \"Locations\"",
             "result": {
-              "status": "failed",
-              "error_message": "AssertionError: Timed out retrying after 10000ms: Expected to find content: 'Global settings' but never did.\n    at Context.eval (https://agrocore-admin-polaris.stage.emea.yaradigitallabs.io/__cypress/tests?p=test\\specs\\features\\updatedcountry.feature:42567:8)\n    at Context.resolveAndRunStepDefinition (https://agrocore-admin-polaris.stage.emea.yaradigitallabs.io/__cypress/tests?p=test\\specs\\features\\updatedcountry.feature:10406:29)\n    at Context.eval (https://agrocore-admin-polaris.stage.emea.yaradigitallabs.io/__cypress/tests?p=test\\specs\\features\\updatedcountry.feature:9727:35)"
+              "status": "skipped"
             }
           },
           {

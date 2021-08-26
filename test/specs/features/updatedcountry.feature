@@ -12,7 +12,8 @@ Feature: Countries
         Then in Country Table a row should be added for country "sample" with following data:
             | Name   | Country Code | Currency Code | Product Set Code | Solutions | Translation Key | Last Mod. | Actions |
             | sample | TS           | AFN           | 33               | CNP       | country.test    | ?         | ···     |
-    @smoke @country
+    # @smokeTest
+     @country
     Scenario: Add a country and Edit country without saving changes and saving changes
         Given  I am in "Countries" page
         #Edit Country without saving the data

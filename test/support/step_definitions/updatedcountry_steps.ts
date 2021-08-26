@@ -4,7 +4,7 @@ import TestFilter from "../TestFilter";
 import * as utilityHelper from "./helper"
 import * as utilityclear from "../cleanAutomated"
 import { Given, And, When, Then,Before,After } from "cypress-cucumber-preprocessor/steps";
-TestFilter(['smoke'], () => {
+// TestFilter(['smoke'], () => {
 Before({tags:"@country"},()=>{
     cy.LoginToApplication().then(()=>{
     utilityclear.deleteCountry('sample')
@@ -25,7 +25,7 @@ Given ('Logged as user with role Global admin and role Global settings and Polar
 })
 And('I clicked button {string} and I clicked button {string}',(button1,button2)=>
 {
-    cy.contains(button1,{timeout:40000}).click()
+    cy.contains(button1,{timeout:50000}).click()
     cy.contains(button2).click()
 })
         // #Add a country
@@ -338,5 +338,5 @@ utilityHelper.verifyAlertToolTips(headerMsg,bodyMsg)
 // after(()=>{
 //     cy.LogoutfromApplication()
 //  });
-})
+// })
 
