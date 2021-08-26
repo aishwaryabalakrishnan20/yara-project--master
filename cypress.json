@@ -1,5 +1,6 @@
 {
     "defaultCommandTimeout": 6000,
+    "pageLoadTimeout":100000,
     "integrationFolder": "test/specs",
     "screenshotsFolder": "test/screenshots",
     "videosFolder": "test/videos",
