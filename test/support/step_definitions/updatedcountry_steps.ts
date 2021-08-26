@@ -25,7 +25,7 @@ Given ('Logged as user with role Global admin and role Global settings and Polar
 })
 And('I clicked button {string} and I clicked button {string}',(button1,button2)=>
 {
-    cy.contains(button1,{timeout:10000}).click()
+    cy.contains(button1,{timeout:40000}).click()
     cy.contains(button2).click()
 })
         // #Add a country
