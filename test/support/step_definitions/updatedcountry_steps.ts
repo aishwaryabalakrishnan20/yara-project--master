@@ -1,11 +1,11 @@
 
 /// <reference types="cypress" />
-
+import TestFilter from "../TestFilter";
 import * as utilityHelper from "./helper"
 import * as utilityclear from "../cleanAutomated"
 import { Given, And, When, Then,Before,After } from "cypress-cucumber-preprocessor/steps";
-
-Before({tags:'@country'},()=>{
+TestFilter(['smoke'], () => {
+Before({tags:"@country"},()=>{
     cy.LoginToApplication().then(()=>{
     utilityclear.deleteCountry('sample')
     })
@@ -338,5 +338,5 @@ utilityHelper.verifyAlertToolTips(headerMsg,bodyMsg)
 // after(()=>{
 //     cy.LogoutfromApplication()
 //  });
-
+})
 

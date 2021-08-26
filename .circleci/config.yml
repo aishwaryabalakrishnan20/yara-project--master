@@ -25,26 +25,12 @@ jobs:
 
       # we need to install CircleCI CLI tool
       # to run the "manual" tests
-      - run: npx cypress run --headless --browser chrome
-      
-      # - cypress/run:
-      #     name: Chrome
-      #     requires:
-      #       - cypress/install
-      #     executor: cypress/browsers-chrome73-ff68
-      #     start: npm start
-      #     wait-on: http://localhost:3000
-      #     record: true
-      #     group: chrome
-      #     browser: chrome
-post-steps:
-  - store_artifacts:
-      path: test/logs
-  - store_artifacts:
-      path: test/videos
-  - store_artifacts:
-      path: test/screenshots
-  - store_artifacts:
-      path: test/results
-  - store_test_results:
-      path: reports
+      - run: yarn run cy:run
+      - store_artifacts:
+          path: test/logs
+      - store_artifacts:
+         path: test/videos
+      - store_artifacts:
+          path: test/screenshots
+      - store_test_results:
+         path: reports

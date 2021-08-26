@@ -15,6 +15,10 @@
         "name": "Add a country and Edit country without saving changes and saving changes",
         "tags": [
           {
+            "name": "@smoke",
+            "line": 15
+          },
+          {
             "name": "@country",
             "line": 15
           }
@@ -28,7 +32,7 @@
             "name": "Logged as user with role Global admin and role Global settings and PolarisMaintenance",
             "result": {
               "status": "passed",
-              "duration": 49923000000
+              "duration": 17618000000
             }
           },
           {
@@ -37,8 +41,9 @@
             "line": 6,
             "name": "I clicked button \"Global settings\" and I clicked button \"Locations\"",
             "result": {
-              "status": "passed",
-              "duration": 7545000000
+              "status": "failed",
+              "duration": 10429000000,
+              "error_message": "AssertionError: Timed out retrying after 10000ms: Expected to find content: 'Global settings' but never did.\n    at Context.eval (https://agrocore-admin-polaris.stage.emea.yaradigitallabs.io/__cypress/tests?p=test\\specs\\features\\updatedcountry.feature:42567:8)\n    at Context.resolveAndRunStepDefinition (https://agrocore-admin-polaris.stage.emea.yaradigitallabs.io/__cypress/tests?p=test\\specs\\features\\updatedcountry.feature:10406:29)\n    at Context.eval (https://agrocore-admin-polaris.stage.emea.yaradigitallabs.io/__cypress/tests?p=test\\specs\\features\\updatedcountry.feature:9727:35)"
             }
           },
           {
@@ -84,8 +89,7 @@
             "line": 8,
             "name": "I create new country with following details:",
             "result": {
-              "status": "passed",
-              "duration": 49145000000
+              "status": "skipped"
             }
           },
           {
@@ -94,8 +98,7 @@
             "line": 11,
             "name": "I click \"Save\" and I should see tooltip text \"Country added!\" and \"The new country has been successfully added to the global list.\"",
             "result": {
-              "status": "passed",
-              "duration": 8651000000
+              "status": "skipped"
             }
           },
           {
@@ -133,8 +136,7 @@
             "line": 12,
             "name": "in Country Table a row should be added for country \"sample\" with following data:",
             "result": {
-              "status": "passed",
-              "duration": 4878000000
+              "status": "skipped"
             }
           },
           {
@@ -143,8 +145,7 @@
             "line": 17,
             "name": "I am in \"Countries\" page",
             "result": {
-              "status": "passed",
-              "duration": 47000000
+              "status": "skipped"
             }
           },
           {
@@ -153,8 +154,7 @@
             "line": 19,
             "name": "I click three dots in the end of row or in column Actions for country \"sample\" present in column \"Name\" a context menu with options \"Edit\" and \"Delete\" shows",
             "result": {
-              "status": "passed",
-              "duration": 7413000000
+              "status": "skipped"
             }
           },
           {
@@ -200,8 +200,7 @@
             "line": 20,
             "name": "I choose \"Edit\" for country \"sample\" a modal appeared with following data:",
             "result": {
-              "status": "passed",
-              "duration": 1917000000
+              "status": "skipped"
             }
           },
           {
@@ -247,8 +246,7 @@
             "line": 23,
             "name": "I change data in all fields for country \"Test\" with following data:",
             "result": {
-              "status": "passed",
-              "duration": 34550000000
+              "status": "skipped"
             }
           },
           {
@@ -257,8 +255,7 @@
             "line": 26,
             "name": "I click button <X> in right up corner of modal \"Edit Country\"",
             "result": {
-              "status": "passed",
-              "duration": 753000000
+              "status": "skipped"
             }
           },
           {
@@ -296,8 +293,7 @@
             "line": 27,
             "name": "modal disappeared, should not change any data for country \"sample\":",
             "result": {
-              "status": "passed",
-              "duration": 173000000
+              "status": "skipped"
             }
           },
           {
@@ -306,8 +302,7 @@
             "line": 31,
             "name": "I search country \"sample\" present in column \"Name\" and choose \"Edit\"",
             "result": {
-              "status": "passed",
-              "duration": 9496000000
+              "status": "skipped"
             }
           },
           {
@@ -353,8 +348,7 @@
             "line": 32,
             "name": "I change data in all fields for country \"sample\" with following data:",
             "result": {
-              "status": "passed",
-              "duration": 40363000000
+              "status": "skipped"
             }
           },
           {
@@ -363,8 +357,7 @@
             "line": 35,
             "name": "I click \"Save\" and I should see tooltip text \"Changes saved\" and \"The changes done to the table row have been successfully saved.\"",
             "result": {
-              "status": "passed",
-              "duration": 9210000000
+              "status": "skipped"
             }
           },
           {
@@ -402,8 +395,7 @@
             "line": 36,
             "name": "data for country \"sample 1\" should be updated in row",
             "result": {
-              "status": "passed",
-              "duration": 2925000000
+              "status": "skipped"
             }
           }
         ]
@@ -428,7 +420,7 @@
             "name": "Logged as user with role Global admin and role Global settings and PolarisMaintenance",
             "result": {
               "status": "passed",
-              "duration": 40112000000
+              "duration": 11426000000
             }
           },
           {
@@ -437,8 +429,8 @@
             "line": 6,
             "name": "I clicked button \"Global settings\" and I clicked button \"Locations\"",
             "result": {
-              "status": "passed",
-              "duration": 5201000000
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 10000ms: Expected to find content: 'Global settings' but never did.\n    at Context.eval (https://agrocore-admin-polaris.stage.emea.yaradigitallabs.io/__cypress/tests?p=test\\specs\\features\\updatedcountry.feature:42567:8)\n    at Context.resolveAndRunStepDefinition (https://agrocore-admin-polaris.stage.emea.yaradigitallabs.io/__cypress/tests?p=test\\specs\\features\\updatedcountry.feature:10406:29)\n    at Context.eval (https://agrocore-admin-polaris.stage.emea.yaradigitallabs.io/__cypress/tests?p=test\\specs\\features\\updatedcountry.feature:9727:35)"
             }
           },
           {
@@ -484,8 +476,7 @@
             "line": 8,
             "name": "I create new country with following details:",
             "result": {
-              "status": "passed",
-              "duration": 43512000000
+              "status": "skipped"
             }
           },
           {
@@ -494,8 +485,7 @@
             "line": 11,
             "name": "I click \"Save\" and I should see tooltip text \"Country added!\" and \"The new country has been successfully added to the global list.\"",
             "result": {
-              "status": "passed",
-              "duration": 9860000000
+              "status": "skipped"
             }
           },
           {
@@ -533,8 +523,7 @@
             "line": 12,
             "name": "in Country Table a row should be added for country \"sample\" with following data:",
             "result": {
-              "status": "passed",
-              "duration": 5056000000
+              "status": "skipped"
             }
           },
           {
@@ -543,8 +532,7 @@
             "line": 43,
             "name": "I am in \"Countries\" page",
             "result": {
-              "status": "passed",
-              "duration": 42000000
+              "status": "skipped"
             }
           },
           {
@@ -553,8 +541,7 @@
             "line": 45,
             "name": "I clicked three dots in the end of row in column Action for country Test a context menu with options \"Edit\" and \"Delete\" shows",
             "result": {
-              "status": "passed",
-              "duration": 7018000000
+              "status": "skipped"
             }
           },
           {
@@ -563,8 +550,7 @@
             "line": 46,
             "name": "I choose \"Delete\" a content appeared \"Please note!\"and\"Are you sure you want to delete sample? The action cannot be reverted.\"",
             "result": {
-              "status": "passed",
-              "duration": 1305000000
+              "status": "skipped"
             }
           },
           {
@@ -573,8 +559,7 @@
             "line": 47,
             "name": "clicked button \"Don't delete\"",
             "result": {
-              "status": "passed",
-              "duration": 854000000
+              "status": "skipped"
             }
           },
           {
@@ -583,8 +568,7 @@
             "line": 48,
             "name": "modal disappeared, should not changes anything in data or row for country  trial 1",
             "result": {
-              "status": "passed",
-              "duration": 159000000
+              "status": "skipped"
             }
           },
           {
@@ -593,8 +577,7 @@
             "line": 51,
             "name": "I clicked three dots in the end of row in column Action for country Test a context menu with options \"Edit\" and \"Delete\" shows",
             "result": {
-              "status": "passed",
-              "duration": 6437000000
+              "status": "skipped"
             }
           },
           {
@@ -603,8 +586,7 @@
             "line": 52,
             "name": "I choose \"Delete\" a content appeared \"Please note!\"and\"Are you sure you want to delete sample? The action cannot be reverted.\"",
             "result": {
-              "status": "passed",
-              "duration": 1491000000
+              "status": "skipped"
             }
           },
           {
@@ -613,8 +595,7 @@
             "line": 53,
             "name": "clicked button Delete",
             "result": {
-              "status": "passed",
-              "duration": 1406000000
+              "status": "skipped"
             }
           },
           {
@@ -623,8 +604,7 @@
             "line": 54,
             "name": "I see tooltip \"Country deleted\"and\"The country has been removed. The country can anyway be added again.\"",
             "result": {
-              "status": "passed",
-              "duration": 9012000000
+              "status": "skipped"
             }
           }
         ]

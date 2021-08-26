@@ -6,16 +6,14 @@
     "fixturesFolder": "test/fixtures",
     "supportFile": "test/support/index.ts",
     "pluginsFile": "test/plugins/index.js",
-    "testFiles":
-      "**/*.feature",
-    
-    
+    "testFiles":"**/*.feature",
     "experimentalRunEvents": true,
     "chromeWebSecurity": false,
     "includeShadowDom": true ,       
-  "baseUrl":"https://agrocore-admin-polaris.stage.emea.yaradigitallabs.io/",
-  "env":{
-    "graphqlUrl":"https://polaris-axial-gateway.stage.emea.yaradigitallabs.io/"
+    "baseUrl":"https://agrocore-admin-polaris.stage.emea.yaradigitallabs.io/",
+    "env":{
+    "graphqlUrl":"https://polaris-axial-gateway.stage.emea.yaradigitallabs.io/",
+    "TAGS": "not @ignore"
     
     },
 
